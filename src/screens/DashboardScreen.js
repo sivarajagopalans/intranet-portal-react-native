@@ -81,7 +81,6 @@ export const DashboardScreen = ({ navigation }) => {
       <View style={styles.logout}>
         <View style={styles.profile}>
           <Text style={styles.textElement}>{userDetails.email}</Text>
-
           <Button title='Logout' onPress={handleLogout} />
         </View>
         <View>
