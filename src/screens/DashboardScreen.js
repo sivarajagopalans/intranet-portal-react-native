@@ -56,13 +56,15 @@ export const DashboardScreen = ({ navigation }) => {
       name: 'QMS',
       url: 'qms.postiefs.com',
       desc: 'Documents related to QMS and ISMS',
-
+      image: require('../../assets/images/QMS.jpg')
     },
 
     {
       name: 'HRMS',
       url: 'hrms.postiefs.com',
       desc: 'Streamlined HR processes and management.',
+      image: require('../../assets/images/hrms.jpg')
+
 
     },
 
@@ -70,9 +72,41 @@ export const DashboardScreen = ({ navigation }) => {
       name: 'CRM',
       url: 'crm.postiefs.com',
       desc: 'Manages target and achievements',
+      image: require('../../assets/images/CRM.jpg')
+    },
 
-    }
+    {
+      name: 'Firewall',
+      url: 'fw.postiefs.com',
+      desc: 'Firewall inventory of our customers',
+      image: require('../../assets/images/firewall.jpg')
+    },
+    {
+      name: 'Server',
+      url: 'ci.postiefs.com',
+      desc: 'Server inventory of our customers ',
+      image: require('../../assets/images/server-inventory.jpg')
+    },
+    {
+      name: 'Billing',
+      url: 'billing.postiefs.com',
+      desc: 'Manages bills/invoices of our customers/vendors ',
+      image: require('../../assets/images/billing-information.jpg')
+    },
+    {
+      name: 'Support',
+      url: 'postiefs.freshdesk.com',
+      desc: 'Customers support portal',
+      image: require('../../assets/images/customer-support.jpg')
+    },
+    {
+      name: 'Email accounts',
+      url: 'zimbra-inventory.postiefs.com',
+      desc: 'Our customers email inventory',
+      image: require('../../assets/images/zimbra.jpg')
+    },
   ]
+
 
 
 
@@ -125,17 +159,17 @@ export const DashboardScreen = ({ navigation }) => {
               profileCard.map((value, index) => {
                 return (
                   <View key={index + 1} style={styles.profileCard}>
-                    <Image source={{ uri: 'https://img.freepik.com/free-vector/human-resources-concept-illustration_114360-22204.jpg?t=st=1729837463~exp=1729841063~hmac=eefd198a1d64ec4c3df7813d468beae2ae5532f6fc1cc709cf6cda9b262c5cce&w=740' }} width={'100%'} height={180}
+                    <Image source={value.image} width={'100%'} height={'100%'} 
                       style={styles.image} />
                     <View style={styles.innerProfileCard}>
-                      <Text style={styles.textElement}>
-                        {value.name}
-                      </Text>
+                      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <Text style={styles.textElement}>
+                          {value.name}
+                        </Text>
+                        <OpenUrlBtn url={"https://" + value.url} />
+                      </View>
                       <Text style={styles.textElement}>
                         {value.desc}
-                      </Text>
-                      <Text style={{ textAlign: 'center' }}>
-                        <OpenUrlBtn title='visit' url={"https://" + value.url} />
                       </Text>
                     </View>
                   </View>
@@ -175,11 +209,13 @@ const styles = StyleSheet.create({
     width: 270,
   },
   image: {
-    borderRadius: 10
+    borderRadius: 10,
+    width:'100%',
+    height:200
   },
   innerProfileCard: {
-    height: 150,
-    justifyContent: 'space-around'
+    height: 110,
+    justifyContent: 'space-evenly'
   },
   textElement: {
     color: 'white',

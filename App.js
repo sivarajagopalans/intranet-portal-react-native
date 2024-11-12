@@ -22,7 +22,7 @@ export default function App() {
           <Drawer.Screen name='Navbar1' component={Navbar1}/>
           <Drawer.Screen name='Navbar2' component={Navbar2}/>
         </Drawer.Navigator> */}
-        <Stack.Navigator initialRouteName="Navbar">
+        <Stack.Navigator initialRouteName="Login">
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Dashboard" component={DashboardScreen} />
           <Stack.Screen name='Navbar' component={Drawer}/>

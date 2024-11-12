@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
-import { Alert, Button, Linking } from 'react-native'
+import { Alert, Button, Image, Linking, Pressable, Text } from 'react-native'
 
-export const OpenUrlBtn = ({ url, title }) => {
+export const OpenUrlBtn = ({ url }) => {
 
   const handlePress = useCallback(async () => {
     const supportedUrl = await Linking.canOpenURL(url);
@@ -14,6 +14,13 @@ export const OpenUrlBtn = ({ url, title }) => {
   }, [url]);
 
   return (
-    <Button title={title} onPress={handlePress} />
+    <Pressable onPress={handlePress} >
+      {/* <Text style={{ marginRight: 10,}}> */}
+
+        <Image style={{ cursor: 'pointer',height:20,width:20}} 
+        source={require('../../assets/images/right-arrow.png')} resizeMode='center'
+        />
+      {/* </Text> */}
+    </Pressable>
   )
 }
