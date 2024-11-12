@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Alert, Button, ImageBackground, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Button, ImageBackground, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import tw from 'twrnc'
 
@@ -75,8 +75,10 @@ export const LoginScreen = ({ navigation }) => {
           </View>
         </View>
         <View style={{ marginVertical: 15 }}>
-          <Button color={'blue'} onPress={handleSubmit}
-            title='Submit' />
+          <Pressable style={{}} onPress={handleSubmit}>
+            <Text
+              style={{ color: 'white', borderColor: 'blue', borderWidth: 2, padding: 10, borderRadius: 10, backgroundColor: 'blue',textAlign:'center' }}>SUBMIT</Text>
+          </Pressable>
         </View>
 
         <StatusBar style="auto" />
